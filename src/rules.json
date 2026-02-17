@@ -1,0 +1,13 @@
+[{
+        "rule_id": "IND-AS-01",
+        "rule_name": "Disclosure of Financial Statements",
+        "keywords": ["balance sheet", "assets", "liabilities"],
+        "description": "The entity must present a complete set of financial statements including a Balance Sheet."
+    },
+    {
+        "rule_id": "IND-AS-07",
+        "rule_name": "Cash Flow Statement",
+        "keywords": ["cash flow", "operating activities", "investing activities"],
+        "description": "An entity shall prepare a cash flow statement as an integral part of its financial statements."
+    }
+]

@@ -1,13 +1,31 @@
 [{
-        "rule_id": "IND-AS-01",
-        "rule_name": "Disclosure of Financial Statements",
-        "keywords": ["balance sheet", "assets", "liabilities"],
-        "description": "The entity must present a complete set of financial statements including a Balance Sheet."
+        "rule_id": "IndAS-01",
+        "rule_name": "Presentation of Financial Statements",
+        "keywords": ["balance sheet", "assets", "liabilities", "equity", "accounting policies"],
+        "description": "Requires disclosure of significant accounting policies and presentation of assets/liabilities."
     },
     {
-        "rule_id": "IND-AS-07",
-        "rule_name": "Cash Flow Statement",
-        "keywords": ["cash flow", "operating activities", "investing activities"],
-        "description": "An entity shall prepare a cash flow statement as an integral part of its financial statements."
+        "rule_id": "IndAS-07",
+        "rule_name": "Statement of Cash Flows",
+        "keywords": ["cash flow", "operating activities", "investing activities", "financing activities"],
+        "description": "Mandatory classification of cash flows into operating, investing, and financing."
+    },
+    {
+        "rule_id": "IndAS-16",
+        "rule_name": "Property, Plant and Equipment (PPE)",
+        "keywords": ["depreciation", "useful life", "impairment", "property", "plant", "equipment"],
+        "description": "Check for measurement, depreciation, and impairment of tangible assets."
+    },
+    {
+        "rule_id": "IndAS-115",
+        "rule_name": "Revenue from Contracts with Customers",
+        "keywords": ["revenue", "contract", "performance obligation", "transaction price"],
+        "description": "5-step model for revenue recognition must be disclosed."
+    },
+    {
+        "rule_id": "SEBI-LODR",
+        "rule_name": "SEBI Disclosure Requirements",
+        "keywords": ["related party", "corporate governance", "shareholding pattern"],
+        "description": "Mandatory disclosures as per SEBI Listing Obligations."
     }
 ]

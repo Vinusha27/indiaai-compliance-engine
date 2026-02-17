@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IndiaAI Compliance Engine</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 40px;
+            background: #f0f2f5;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #1a3a5f;
+            text-align: center;
+            border-bottom: 2px solid #1a3a5f;
+            padding-bottom: 10px;
+        }
+        
+        .upload-section {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        input[type="file"] {
+            margin-bottom: 15px;
+        }
+        
+        button {
+            padding: 10px 25px;
+            background: #1a3a5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        button:hover {
+            background: #244d7a;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th,
+        td {
+            border: 1px solid #dee2e6;
+            padding: 15px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #1a3a5f;
+            color: white;
+        }
+        
+        .compliant {
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .non-compliant {
+            color: #dc3545;
+            font-weight: bold;
+        }
+        
+        .evidence {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🇮🇳 IndiaAI Financial Compliance Engine</h1>
+
+        <div class="upload-section">
+            <p><strong>Step 1:</strong> Select your Financial Report (PDF)</p>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept=".pdf" required><br>
+                <button type="submit">Analyze Compliance</button>
+            </form>
+        </div>
+
+        {% if results %}
+        <h2>Step 2: Analysis Results</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Rule ID</th>
+                    <th>Compliance Requirement</th>
+                    <th>Status</th>
+                    <th>Evidence (Keywords Found)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for r in results %}
+                <tr>
+                    <td><strong>{{ r.rule_id }}</strong></td>
+                    <td>{{ r.rule_name }}</td>
+                    <td class="{{ 'compliant' if r.status == 'COMPLIANT' else 'non-compliant' }}">
+                        {{ r.status }}
+                    </td>
+                    <td class="evidence">
+                        {% if r.evidence_found %} {{ r.evidence_found | join(', ') }} {% else %} No evidence found in document. {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+</body>
+
+</html>
